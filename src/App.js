@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./Home/Home";
+import { NewRoute } from "./NewRoute/NewRoute";
+import { useState, useEffect } from "react";
 
-function App() {
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home setCounter={setCounter} counter={counter} />}
+          />
+          <Route
+            path="/NewRoute"
+            element={<NewRoute setCounter={setCounter} counter={counter} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
