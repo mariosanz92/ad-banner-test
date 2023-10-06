@@ -12,7 +12,7 @@ export const NewRoute = () => {
       <AdBanner
         adUnitId="/6355419/Travel/Europe/France/Paris"
         size={{ width: 100, height: 100 }}
-        adDivId={id}
+        adDivId={`banner-router-${id}`}
       />
     </div>
   );
